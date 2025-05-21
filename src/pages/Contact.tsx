@@ -1,11 +1,11 @@
 
 import { useState } from "react";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, SendIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/Layout";
 
@@ -15,326 +15,214 @@ const Contact = () => {
     name: "",
     email: "",
     subject: "",
-    message: "",
+    message: ""
   });
-  const [loading, setLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
+    setIsSubmitting(true);
     
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Message Sent",
-        description: "Thank you for contacting us. We'll get back to you soon.",
-        variant: "default",
+        title: "Message Sent!",
+        description: "We've received your message and will get back to you soon.",
+        variant: "default"
       });
       setFormData({
         name: "",
         email: "",
         subject: "",
-        message: "",
+        message: ""
       });
-      setLoading(false);
+      setIsSubmitting(false);
     }, 1500);
   };
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-cover bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://source.unsplash.com/random/1920x600?college,building")' }}>
-        <div className="container mx-auto px-4 text-white">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl">Get in touch with us for any inquiries or information.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Information */}
-      <section className="py-16 bg-white">
+      <div className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <MapPin className="h-6 w-6 text-college-blue" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Address</h3>
-                <p className="text-muted-foreground">
-                  SVRM College Campus, NH-5,<br />
-                  Nagaram, Guntur District,<br />
-                  Andhra Pradesh - 522268
-                </p>
-              </div>
-            </Card>
-            
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Phone className="h-6 w-6 text-college-blue" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Phone</h3>
-                <p className="text-muted-foreground">
-                  Main Office: +91 9999999999<br />
-                  Admissions: +91 8888888888<br />
-                  Examinations: +91 7777777777
-                </p>
-              </div>
-            </Card>
-            
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Mail className="h-6 w-6 text-college-blue" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Email</h3>
-                <p className="text-muted-foreground">
-                  General: info@svrmc.edu.in<br />
-                  Admissions: admissions@svrmc.edu.in<br />
-                  Placements: placements@svrmc.edu.in
-                </p>
-              </div>
-            </Card>
-            
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Clock className="h-6 w-6 text-college-blue" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Office Hours</h3>
-                <p className="text-muted-foreground">
-                  Monday - Friday: 9:00 AM - 5:00 PM<br />
-                  Saturday: 9:00 AM - 1:00 PM<br />
-                  Sunday: Closed
-                </p>
-              </div>
-            </Card>
+          <div className="text-center mb-12">
+            <h1 className="text-3xl font-bold text-gray-900">Contact Us</h1>
+            <p className="text-gray-600 mt-2">Get in touch with us for any inquiries or information</p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <div>
-              <h2 className="section-title mb-8">Send us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Your Name</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      placeholder="Enter your name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-1">
+              <Card className="overflow-hidden animate-fade-in">
+                <CardHeader className="bg-college-blue text-white">
+                  <CardTitle className="text-xl">Contact Information</CardTitle>
+                </CardHeader>
+                <CardContent className="p-6 bg-white">
+                  <div className="space-y-6">
+                    <div className="flex items-start">
+                      <div className="mt-1 bg-college-blue/10 p-2 rounded-full">
+                        <MapPin className="h-5 w-5 text-college-blue" />
+                      </div>
+                      <div className="ml-4">
+                        <h3 className="font-medium text-gray-900">Address</h3>
+                        <address className="not-italic text-gray-600 mt-1">
+                          NH-5, Near Ashram Y Junction<br />
+                          Kommadi, Visakhapatnam<br />
+                          Andhra Pradesh - 530003
+                        </address>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start">
+                      <div className="mt-1 bg-college-blue/10 p-2 rounded-full">
+                        <Phone className="h-5 w-5 text-college-blue" />
+                      </div>
+                      <div className="ml-4">
+                        <h3 className="font-medium text-gray-900">Phone</h3>
+                        <p className="text-gray-600 mt-1">+91 (891) 2511222</p>
+                        <p className="text-gray-600 mt-1">+91 (891) 2511223</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start">
+                      <div className="mt-1 bg-college-blue/10 p-2 rounded-full">
+                        <Mail className="h-5 w-5 text-college-blue" />
+                      </div>
+                      <div className="ml-4">
+                        <h3 className="font-medium text-gray-900">Email</h3>
+                        <a href="mailto:info@svrmc.edu.in" className="text-college-blue hover:underline mt-1">info@svrmc.edu.in</a>
+                        <p className="text-gray-600 mt-1">principal@svrmc.edu.in</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="Enter your email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
+                </CardContent>
+              </Card>
+              
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+                <div className="flex space-x-4">
+                  <a href="#" className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition">
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  <a href="#" className="bg-[#1da1f2] text-white p-2 rounded-full hover:bg-blue-500 transition">
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                    </svg>
+                  </a>
+                  <a href="#" className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-2 rounded-full hover:from-purple-600 hover:to-pink-600 transition">
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  <a href="#" className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700 transition">
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                    </svg>
+                  </a>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    placeholder="Enter subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Enter your message"
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <Button 
-                  type="submit" 
-                  className="bg-college-blue hover:bg-blue-700 w-full md:w-auto"
-                  disabled={loading}
-                >
-                  {loading ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
+              </div>
             </div>
-            
-            <div>
-              <h2 className="section-title mb-8">Find Us</h2>
-              <div className="rounded-lg overflow-hidden shadow-md h-[400px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3836.7950223313613!2d80.53202607592844!3d15.900663043779911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a0bb3bc7db711%3A0xb6f3a7173223e89d!2sVelagapudi%20Ramakrishna%20Siddhartha%20Engineering%20College!5e0!3m2!1sen!2sin!4v1715777718390!5m2!1sen!2sin"
+
+            <div className="lg:col-span-2">
+              <Card className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                <CardHeader className="bg-college-blue text-white">
+                  <CardTitle className="text-xl">Send us a Message</CardTitle>
+                </CardHeader>
+                <CardContent className="p-6 bg-white">
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="name">Your Name</Label>
+                        <Input 
+                          id="name"
+                          name="name"
+                          placeholder="Enter your name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email Address</Label>
+                        <Input 
+                          id="email"
+                          name="email"
+                          type="email"
+                          placeholder="Enter your email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="subject">Subject</Label>
+                      <Input 
+                        id="subject"
+                        name="subject"
+                        placeholder="Enter subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message</Label>
+                      <Textarea 
+                        id="message"
+                        name="message"
+                        placeholder="Enter your message here"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={5}
+                        required
+                      />
+                    </div>
+                    <Button 
+                      type="submit" 
+                      className="w-full md:w-auto bg-college-blue hover:bg-blue-700"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <span className="flex items-center">
+                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        <span className="flex items-center">
+                          <SendIcon className="mr-2 h-4 w-4" />
+                          Send Message
+                        </span>
+                      )}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+
+              <div className="mt-8 h-[300px] rounded-lg overflow-hidden shadow-md animate-fade-in" style={{ animationDelay: "0.4s" }}>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.3861539630434!2d83.34566931526856!3d17.796376287818396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395bedc7efb603%3A0x392c739c2dada6f!2sShri%20Vishnu%20Engineering%20College%20for%20Women!5e0!3m2!1sen!2sin!4v1653405878916!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
+                  frameBorder="0"
                   style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="College Location Map"
+                  allowFullScreen={true}
+                  aria-hidden="false"
+                  tabIndex={0}
                 ></iframe>
-              </div>
-              <div className="mt-6 bg-gray-50 p-4 rounded-lg">
-                <h3 className="font-bold text-lg mb-2">How to Reach Us</h3>
-                <div className="space-y-2">
-                  <p className="text-sm">
-                    <span className="font-medium">By Bus:</span> Regular state transport buses are available from Guntur, Vijayawada, and nearby towns.
-                  </p>
-                  <p className="text-sm">
-                    <span className="font-medium">By Train:</span> Nearest railway station is Guntur Junction (15 km) with frequent auto/cab services to the college.
-                  </p>
-                  <p className="text-sm">
-                    <span className="font-medium">By Air:</span> Nearest airport is Vijayawada Airport (50 km). Taxis are available from the airport to the college.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Departments Contact */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Department Contacts</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Contact specific departments directly for academic queries.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="p-6">
-              <h3 className="font-bold text-lg mb-4 text-college-blue">Engineering Departments</h3>
-              <ul className="space-y-3">
-                <li>
-                  <div className="font-medium">Computer Science & Engineering</div>
-                  <div className="text-sm text-muted-foreground">cse@svrmc.edu.in | +91 9876543210</div>
-                </li>
-                <li>
-                  <div className="font-medium">Electronics & Communication Engineering</div>
-                  <div className="text-sm text-muted-foreground">ece@svrmc.edu.in | +91 9876543211</div>
-                </li>
-                <li>
-                  <div className="font-medium">Civil Engineering</div>
-                  <div className="text-sm text-muted-foreground">civil@svrmc.edu.in | +91 9876543212</div>
-                </li>
-                <li>
-                  <div className="font-medium">Mechanical Engineering</div>
-                  <div className="text-sm text-muted-foreground">mechanical@svrmc.edu.in | +91 9876543213</div>
-                </li>
-              </ul>
-            </Card>
-            
-            <Card className="p-6">
-              <h3 className="font-bold text-lg mb-4 text-college-blue">Science Departments</h3>
-              <ul className="space-y-3">
-                <li>
-                  <div className="font-medium">Physics</div>
-                  <div className="text-sm text-muted-foreground">physics@svrmc.edu.in | +91 9876543214</div>
-                </li>
-                <li>
-                  <div className="font-medium">Chemistry</div>
-                  <div className="text-sm text-muted-foreground">chemistry@svrmc.edu.in | +91 9876543215</div>
-                </li>
-                <li>
-                  <div className="font-medium">Mathematics</div>
-                  <div className="text-sm text-muted-foreground">maths@svrmc.edu.in | +91 9876543216</div>
-                </li>
-              </ul>
-            </Card>
-            
-            <Card className="p-6">
-              <h3 className="font-bold text-lg mb-4 text-college-blue">Administrative Offices</h3>
-              <ul className="space-y-3">
-                <li>
-                  <div className="font-medium">Principal's Office</div>
-                  <div className="text-sm text-muted-foreground">principal@svrmc.edu.in | +91 9876543217</div>
-                </li>
-                <li>
-                  <div className="font-medium">Examination Cell</div>
-                  <div className="text-sm text-muted-foreground">exams@svrmc.edu.in | +91 9876543218</div>
-                </li>
-                <li>
-                  <div className="font-medium">Training & Placement Cell</div>
-                  <div className="text-sm text-muted-foreground">placements@svrmc.edu.in | +91 9876543219</div>
-                </li>
-                <li>
-                  <div className="font-medium">Hostel Administration</div>
-                  <div className="text-sm text-muted-foreground">hostel@svrmc.edu.in | +91 9876543220</div>
-                </li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Frequently Asked Questions</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Find answers to common queries about admissions, campus facilities, and more.
-            </p>
-          </div>
-          
-          <div className="max-w-3xl mx-auto">
-            <Card className="mb-4">
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2">What are the admission requirements?</h3>
-                <p className="text-muted-foreground">
-                  Admission requirements vary by program. Generally, for undergraduate programs, candidates must have completed 10+2 with the required percentage in relevant subjects. For postgraduate programs, a bachelor's degree in the relevant field is required. Please visit our Admissions page for specific program requirements.
-                </p>
-              </div>
-            </Card>
-            <Card className="mb-4">
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2">Are hostel facilities available?</h3>
-                <p className="text-muted-foreground">
-                  Yes, we have separate hostel facilities for boys and girls with modern amenities. The hostels feature comfortable accommodations, mess facilities, recreational areas, and 24/7 security. For hostel applications and fees, please contact the Hostel Administration Office.
-                </p>
-              </div>
-            </Card>
-            <Card className="mb-4">
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2">How can I apply for scholarships?</h3>
-                <p className="text-muted-foreground">
-                  The college offers various merit-based and need-based scholarships. Students can also apply for government scholarships. The application process and deadlines are announced at the beginning of each academic year. Please visit the Scholarships section on our website or contact the Scholarships Office for details.
-                </p>
-              </div>
-            </Card>
-            <Card>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2">What placement services are provided?</h3>
-                <p className="text-muted-foreground">
-                  Our Training & Placement Cell actively works to secure placement opportunities for students. We conduct pre-placement training, arrange campus interviews, and organize career guidance workshops. We have partnerships with numerous companies across various industries for recruitment.
-                </p>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
+      </div>
     </Layout>
   );
 };
