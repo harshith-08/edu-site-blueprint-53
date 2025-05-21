@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -217,7 +216,7 @@ const StudentLogin = () => {
                             <SelectValue placeholder="All Departments" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="">All Departments</SelectItem>
+                            <SelectItem value="all">All Departments</SelectItem>
                             <SelectItem value="Computer Science">Computer Science</SelectItem>
                             <SelectItem value="Electronics & Communication">Electronics & Communication</SelectItem>
                             <SelectItem value="Civil Engineering">Civil Engineering</SelectItem>
@@ -235,7 +234,7 @@ const StudentLogin = () => {
                             <SelectValue placeholder="All Semesters" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="">All Semesters</SelectItem>
+                            <SelectItem value="all">All Semesters</SelectItem>
                             <SelectItem value="1st Semester">1st Semester</SelectItem>
                             <SelectItem value="2nd Semester">2nd Semester</SelectItem>
                             <SelectItem value="3rd Semester">3rd Semester</SelectItem>
