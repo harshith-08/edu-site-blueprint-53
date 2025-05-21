@@ -124,10 +124,10 @@ const Header = () => {
 
           <div className="hidden lg:flex items-center space-x-2">
             <Button variant="outline" className={`border-primary ${scrolled ? "text-primary" : "text-white border-white hover:border-primary"}`} asChild>
-              <Link to="/faculty-login">Faculty Login</Link>
+              <Link to="/admin-login">Admin Login</Link>
             </Button>
-            <Button className="bg-college-blue text-white hover:bg-blue-800" asChild>
-              <Link to="/student-login">Student Login</Link>
+            <Button className="bg-green-600 text-white hover:bg-green-700" asChild>
+              <Link to="/student-documents">Student Documents</Link>
             </Button>
           </div>
 
@@ -221,10 +221,10 @@ const Header = () => {
               </Link>
               <div className="pt-2 pb-1 px-4 border-t border-gray-200 flex space-x-2">
                 <Button variant="outline" className="text-primary border-primary w-full" asChild>
-                  <Link to="/faculty-login" onClick={closeMobileMenu}>Faculty Login</Link>
+                  <Link to="/admin-login" onClick={closeMobileMenu}>Admin Login</Link>
                 </Button>
-                <Button className="bg-college-blue text-white hover:bg-blue-800 w-full" asChild>
-                  <Link to="/student-login" onClick={closeMobileMenu}>Student Login</Link>
+                <Button className="bg-green-600 text-white hover:bg-green-700 w-full" asChild>
+                  <Link to="/student-documents" onClick={closeMobileMenu}>Student Documents</Link>
                 </Button>
               </div>
             </div>

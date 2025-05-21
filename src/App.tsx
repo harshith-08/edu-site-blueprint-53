@@ -10,8 +10,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Departments from "./pages/Departments";
 import Contact from "./pages/Contact";
-import FacultyLogin from "./pages/FacultyLogin";
-import StudentLogin from "./pages/StudentLogin";
+import AdminLogin from "./pages/AdminLogin";
 import StudentDocuments from "./pages/StudentDocuments";
 import NotFound from "./pages/NotFound";
 
@@ -28,8 +27,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/departments" element={<Departments />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/faculty-login" element={<FacultyLogin />} />
-          <Route path="/student-login" element={<StudentLogin />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/student-documents" element={<StudentDocuments />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -2,10 +2,10 @@
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, FileText, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/Layout";
 
@@ -18,7 +18,7 @@ const StudentDocuments = () => {
   
   const [searchQuery, setSearchQuery] = useState("");
   
-  const documents = [
+  const marksheets = [
     {
       id: "1",
       title: "Mid Semester Exam Results",
@@ -69,12 +69,12 @@ const StudentDocuments = () => {
     setSearchQuery(e.target.value);
   };
 
-  const filteredDocuments = documents.filter((doc) => {
-    const matchesSemester = !filters.semester || doc.semester === filters.semester;
-    const matchesDepartment = !filters.department || doc.department === filters.department;
+  const filteredMarksheets = marksheets.filter((sheet) => {
+    const matchesSemester = !filters.semester || sheet.semester === filters.semester;
+    const matchesDepartment = !filters.department || sheet.department === filters.department;
     const matchesSearch = !searchQuery || 
-      doc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      doc.department.toLowerCase().includes(searchQuery.toLowerCase());
+      sheet.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      sheet.department.toLowerCase().includes(searchQuery.toLowerCase());
     
     return matchesSemester && matchesDepartment && matchesSearch;
   });
@@ -89,22 +89,17 @@ const StudentDocuments = () => {
 
   return (
     <Layout>
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 min-h-screen">
+      <section className="py-20 bg-gray-50 min-h-screen">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12 animate-fade-in">
-            <h1 className="text-3xl md:text-4xl font-bold text-college-blue">Student Documents</h1>
-            <p className="text-gray-600 mt-2">Access your academic documents and resources</p>
-          </div>
-          
           <div className="max-w-4xl mx-auto">
-            <Card className="border-t-4 border-t-college-blue shadow-lg animate-fade-in">
+            <Card className="border-t-4 border-t-green-600">
               <CardHeader>
-                <CardTitle className="text-2xl">Academic Documents</CardTitle>
-                <CardDescription>Browse and download your academic records and resources</CardDescription>
+                <CardTitle className="text-2xl">Student Documents</CardTitle>
+                <CardDescription>Access your marksheets and other academic documents</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="bg-gray-50 p-4 rounded-lg border animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                  <h3 className="font-semibold text-lg mb-4">Search & Filter Documents</h3>
+                <div>
+                  <h3 className="font-bold text-lg mb-4">Search & Filter Documents</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <Label htmlFor="searchQuery" className="mb-2">Search</Label>
@@ -129,7 +124,7 @@ const StudentDocuments = () => {
                           <SelectValue placeholder="All Departments" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="all">All Departments</SelectItem>
+                          <SelectItem value="">All Departments</SelectItem>
                           <SelectItem value="Computer Science">Computer Science</SelectItem>
                           <SelectItem value="Electronics & Communication">Electronics & Communication</SelectItem>
                           <SelectItem value="Civil Engineering">Civil Engineering</SelectItem>
@@ -147,7 +142,7 @@ const StudentDocuments = () => {
                           <SelectValue placeholder="All Semesters" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="all">All Semesters</SelectItem>
+                          <SelectItem value="">All Semesters</SelectItem>
                           <SelectItem value="1st Semester">1st Semester</SelectItem>
                           <SelectItem value="2nd Semester">2nd Semester</SelectItem>
                           <SelectItem value="3rd Semester">3rd Semester</SelectItem>
@@ -162,28 +157,26 @@ const StudentDocuments = () => {
                   </div>
                 </div>
                 
-                <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                  <h3 className="font-semibold text-lg mb-4">Available Documents</h3>
+                <div>
+                  <h3 className="font-bold text-lg mb-4">Available Documents</h3>
                   <div className="divide-y">
-                    {filteredDocuments.length > 0 ? (
-                      filteredDocuments.map((doc, index) => (
-                        <div key={doc.id} className="py-4 flex items-center justify-between hover:bg-gray-50 rounded-lg px-3 transition-colors group animate-fade-in" style={{ animationDelay: `${0.4 + index * 0.1}s` }}>
+                    {filteredMarksheets.length > 0 ? (
+                      filteredMarksheets.map((sheet) => (
+                        <div key={sheet.id} className="py-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
                           <div className="flex items-start gap-3">
-                            <div className="bg-college-blue/10 p-2 rounded-full group-hover:bg-college-blue/20 transition-colors">
-                              <FileText size={24} className="text-college-blue" />
-                            </div>
+                            <FileText size={24} className="text-green-600 mt-1" />
                             <div>
-                              <h4 className="font-medium">{doc.title}</h4>
+                              <h4 className="font-medium">{sheet.title}</h4>
                               <div className="text-sm text-muted-foreground">
-                                {doc.department} | {doc.semester} | Uploaded: {doc.uploadDate}
+                                {sheet.department} | {sheet.semester} | Uploaded: {sheet.uploadDate}
                               </div>
                             </div>
                           </div>
                           <Button 
                             variant="outline" 
                             size="sm" 
-                            className="flex items-center gap-1 group-hover:bg-college-blue group-hover:text-white transition-colors"
-                            onClick={() => handleDownload(doc.id)}
+                            className="flex items-center gap-1"
+                            onClick={() => handleDownload(sheet.id)}
                           >
                             <Download size={16} />
                             Download
@@ -199,10 +192,6 @@ const StudentDocuments = () => {
                 </div>
               </CardContent>
             </Card>
-            
-            <div className="text-center mt-8 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: "0.6s" }}>
-              <p>Need help? Contact the administrative office at admin@svrmc.edu.in</p>
-            </div>
           </div>
         </div>
       </section>
