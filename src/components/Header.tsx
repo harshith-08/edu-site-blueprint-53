@@ -52,7 +52,7 @@ const Header = () => {
               className="h-12 w-12"
             />
             <div className={`flex flex-col ${scrolled ? "text-college-blue" : "text-white"}`}>
-              <span className="font-bold text-sm md:text-base">Shri Velagapudi Ramakrishna Memorial College</span>
+              <span className="font-bold text-sm md:text-base">Sri Velagapudi Ramakrishna Memorial College</span>
               <span className="text-xs">Govt. Aided College Sponsored by R.T.E.I. Society</span>
             </div>
           </Link>
