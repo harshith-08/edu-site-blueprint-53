@@ -61,10 +61,10 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/faculty-login" className="text-sm text-gray-300 hover:text-white transition-colors">Faculty Login</Link></li>
               <li><Link to="/student-login" className="text-sm text-gray-300 hover:text-white transition-colors">Student Login</Link></li>
-              <li><a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">Academic Calendar</a></li>
-              <li><a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">Results</a></li>
-              <li><a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">Examination Schedule</a></li>
-              <li><a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">Scholarships</a></li>
+              <li><Link to="/academic-calendar" className="text-sm text-gray-300 hover:text-white transition-colors">Academic Calendar</Link></li>
+              <li><Link to="/results" className="text-sm text-gray-300 hover:text-white transition-colors">Results</Link></li>
+              <li><Link to="/exam-schedule" className="text-sm text-gray-300 hover:text-white transition-colors">Examination Schedule</Link></li>
+              <li><Link to="/scholarships" className="text-sm text-gray-300 hover:text-white transition-colors">Scholarships</Link></li>
             </ul>
           </div>
 

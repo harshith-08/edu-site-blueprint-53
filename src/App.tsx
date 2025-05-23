@@ -18,6 +18,14 @@ import Academics from "./pages/Academics";
 import News from "./pages/News";
 import Admission from "./pages/Admission";
 import NewsDetail from "./pages/NewsDetail";
+import Placements from "./pages/Placements";
+import Gallery from "./pages/Gallery";
+import FacultyLogin from "./pages/FacultyLogin";
+import StudentLogin from "./pages/StudentLogin";
+import AcademicCalendar from "./pages/AcademicCalendar";
+import Results from "./pages/Results";
+import ExamSchedule from "./pages/ExamSchedule";
+import Scholarships from "./pages/Scholarships";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +47,14 @@ const App = () => (
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/admission" element={<Admission />} />
+          <Route path="/placements" element={<Placements />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/faculty-login" element={<FacultyLogin />} />
+          <Route path="/student-login" element={<StudentLogin />} />
+          <Route path="/academic-calendar" element={<AcademicCalendar />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/exam-schedule" element={<ExamSchedule />} />
+          <Route path="/scholarships" element={<Scholarships />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

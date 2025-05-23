@@ -35,7 +35,7 @@ const AnnouncementsSidebar = ({ announcements }: AnnouncementsSidebarProps) => {
               <Bell className="mr-2 h-5 w-5" />
               Announcements
             </h2>
-            <Link to="/announcements" className="text-sm text-college-blue hover:underline">View All</Link>
+            <Link to="/news" className="text-sm text-college-blue hover:underline">View All</Link>
           </div>
           <div className="space-y-4 announcements-container">
             {announcements.map((announcement, index) => (
@@ -78,27 +78,27 @@ const AnnouncementsSidebar = ({ announcements }: AnnouncementsSidebarProps) => {
               </Link>
             </li>
             <li>
-              <Link to="/admin" className="flex items-center hover:text-college-gold transition-colors">
+              <Link to="/admin-login" className="flex items-center hover:text-college-gold transition-colors">
                 <ArrowRight className="h-4 w-4 mr-2" />
                 Admin Portal
               </Link>
             </li>
             <li>
-              <Link to="#" className="flex items-center hover:text-college-gold transition-colors">
+              <Link to="/exam-schedule" className="flex items-center hover:text-college-gold transition-colors">
                 <ArrowRight className="h-4 w-4 mr-2" />
                 Examination Schedule
               </Link>
             </li>
             <li>
-              <Link to="#" className="flex items-center hover:text-college-gold transition-colors">
+              <Link to="/academic-calendar" className="flex items-center hover:text-college-gold transition-colors">
                 <ArrowRight className="h-4 w-4 mr-2" />
                 Academic Calendar
               </Link>
             </li>
             <li>
-              <Link to="#" className="flex items-center hover:text-college-gold transition-colors">
+              <Link to="/results" className="flex items-center hover:text-college-gold transition-colors">
                 <ArrowRight className="h-4 w-4 mr-2" />
-                Campus Facilities
+                Results
               </Link>
             </li>
           </ul>
