@@ -208,7 +208,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-2">
             <Button 
               variant="outline" 
-              className={`${scrolled ? "border-college-blue text-college-blue hover:bg-college-blue hover:text-white" : "border-white text-white hover:bg-white hover:text-college-blue"}`} 
+              className={`${scrolled ? "border-college-blue text-college-blue hover:bg-college-blue hover:text-white" : "border-white text-white hover:bg-white/10"}`} 
               asChild
             >
               <Link to="/admin-login">Admin Login</Link>

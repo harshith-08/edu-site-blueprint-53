@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,21 +14,18 @@ const Departments = () => {
       {
         id: "telugu",
         name: "Telugu",
-        image: "https://source.unsplash.com/random/400x300?books,language",
         description: "Studies focused on Telugu literature, grammar, and cultural aspects.",
         programs: ["B.A.", "M.A.", "Ph.D"]
       },
       {
         id: "hindi",
         name: "Hindi",
-        image: "https://source.unsplash.com/random/400x300?india,language",
         description: "Comprehensive programs covering Hindi literature, poetry, and linguistic studies.",
         programs: ["B.A.", "M.A.", "Ph.D"]
       },
       {
         id: "english",
         name: "English",
-        image: "https://source.unsplash.com/random/400x300?literature,books",
         description: "Programs focusing on English literature, communication skills, and linguistic analysis.",
         programs: ["B.A.", "M.A.", "Ph.D"]
       }
@@ -38,49 +34,42 @@ const Departments = () => {
       {
         id: "physics",
         name: "Physics",
-        image: "https://source.unsplash.com/random/400x300?physics,science",
         description: "Study of matter, energy, and the fundamental forces of nature.",
         programs: ["B.Sc", "M.Sc", "Ph.D"]
       },
       {
         id: "chemistry",
         name: "Chemistry",
-        image: "/lovable-uploads/4b78b0b7-424d-41e9-b09c-4108e1edd3c0.png",
         description: "Study of chemical reactions, molecular structures, and laboratory techniques.",
         programs: ["B.Sc", "M.Sc", "Ph.D"]
       },
       {
         id: "mathematics",
         name: "Mathematics",
-        image: "https://source.unsplash.com/random/400x300?mathematics,equations",
         description: "Focuses on mathematical theories, computational techniques, and applications.",
         programs: ["B.Sc", "M.Sc", "Ph.D"]
       },
       {
         id: "computerscience",
         name: "Computer Science",
-        image: "/lovable-uploads/dd09abc5-6c94-4cbf-898d-c7df488183a6.png",
         description: "Programs covering programming, algorithms, data structures and advanced computing.",
         programs: ["B.Sc", "M.Sc", "Ph.D"]
       },
       {
         id: "botany",
         name: "Botany",
-        image: "https://source.unsplash.com/random/400x300?plants,botany",
         description: "Study of plant life, plant structure, growth, reproduction, and evolution.",
         programs: ["B.Sc", "M.Sc", "Ph.D"]
       },
       {
         id: "zoology",
         name: "Zoology",
-        image: "https://source.unsplash.com/random/400x300?biology,animals",
         description: "Study of animals, their behavior, structure, physiology, and classification.",
         programs: ["B.Sc", "M.Sc", "Ph.D"]
       },
       {
         id: "aquaculture",
         name: "Aquaculture Technology",
-        image: "https://source.unsplash.com/random/400x300?fish,aquarium",
         description: "Programs focusing on fish farming, aquatic organisms, and water resource management.",
         programs: ["B.Sc", "M.Sc"]
       }
@@ -89,28 +78,24 @@ const Departments = () => {
       {
         id: "commerce",
         name: "Commerce",
-        image: "https://source.unsplash.com/random/400x300?business,commerce",
         description: "Covers accounting, taxation, business law, and economics principles.",
         programs: ["B.Com", "M.Com", "Ph.D"]
       },
       {
         id: "economics",
         name: "Economics",
-        image: "https://source.unsplash.com/random/400x300?economics,finance",
         description: "Study of resource allocation, production, consumption and wealth distribution.",
         programs: ["B.A.", "M.A.", "Ph.D"]
       },
       {
         id: "history",
         name: "History",
-        image: "https://source.unsplash.com/random/400x300?history,ancient",
         description: "Examination of past events, civilizations, and cultural developments.",
         programs: ["B.A.", "M.A.", "Ph.D"]
       },
       {
         id: "polisci",
         name: "Political Science",
-        image: "https://source.unsplash.com/random/400x300?politics,government",
         description: "Study of governance systems, political behavior, and public policy.",
         programs: ["B.A.", "M.A.", "Ph.D"]
       }
@@ -312,7 +297,7 @@ const Departments = () => {
             <Button size="lg" className="bg-college-gold text-black hover:bg-yellow-500" asChild>
               <Link to="/admission">Apply Now</Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10" asChild>
+            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/20 hover:text-white" asChild>
               <Link to="/contact">Request Information</Link>
             </Button>
           </div>
@@ -325,13 +310,6 @@ const Departments = () => {
 const DepartmentCard = ({ department }) => {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
-      <div className="h-48 overflow-hidden">
-        <img 
-          src={department.image} 
-          alt={department.name} 
-          className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-        />
-      </div>
       <CardHeader className="pb-2">
         <CardTitle className="text-lg">{department.name}</CardTitle>
         <CardDescription className="flex gap-2 flex-wrap">
