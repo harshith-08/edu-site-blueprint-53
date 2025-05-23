@@ -13,13 +13,13 @@ const WelcomeSection = () => {
           <p className="mb-6 slide-up" style={{ animationDelay: "0.2s" }}>The college offers undergraduate and postgraduate programs across various disciplines including Engineering, Science, Management, and more. With state-of-the-art infrastructure and experienced faculty, we provide a conducive environment for holistic development.</p>
           <Button className="bg-college-blue hover:bg-blue-700 hover-scale flex items-center slide-up" style={{ animationDelay: "0.3s" }} asChild>
             <Link to="/about">
-              Explore Departments <ArrowRight className="ml-2 h-4 w-4" />
+              Explore Our College <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>
         <div className="rounded-lg overflow-hidden shadow-lg hover-scale">
           <img 
-            src="https://source.unsplash.com/random/800x600?college,building" 
+            src="/lovable-uploads/a29d5e18-fb3d-47a3-b3d2-a210ce08d66c.png" 
             alt="SVRMC Campus" 
             className="w-full h-[300px] object-cover"
           />

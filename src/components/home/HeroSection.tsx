@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url("https://source.unsplash.com/random/1920x1080?university,campus")' }}>
+    <section className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("/lovable-uploads/bf17da84-634b-4ca1-b09f-996816eb4e61.png")' }}>
       <div className="hero-overlay"></div>
       <div className="hero-content container mx-auto px-4 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">Shri Velagapudi Ramakrishna Memorial College</h1>
