@@ -1,10 +1,9 @@
-
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Gallery as GalleryIcon, GalleryVertical } from "lucide-react";
+import { Grid3X3, GalleryVertical } from "lucide-react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 const Gallery = () => {
@@ -76,7 +75,7 @@ const Gallery = () => {
                 className="border border-gray-200 rounded-md"
               >
                 <ToggleGroupItem value="grid" aria-label="Grid view">
-                  <GalleryIcon className="h-5 w-5" />
+                  <Grid3X3 className="h-5 w-5" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="masonry" aria-label="Masonry view">
                   <GalleryVertical className="h-5 w-5" />
