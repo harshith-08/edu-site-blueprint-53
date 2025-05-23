@@ -89,21 +89,21 @@ const Index = () => {
   const latestNews = [
     {
       id: 1,
-      title: "College Secures Top Rank in State Engineering Rankings",
+      title: "College Secures Top Rank in State Rankings",
       date: "May 18, 2025",
-      image: "https://source.unsplash.com/random/300x200?campus,1"
+      image: "/lovable-uploads/d85fb3d3-b73a-4321-ba55-69d5399a79a5.png"
     },
     {
       id: 2,
-      title: "SVRMC Students Win National Robotics Competition",
+      title: "New Research Center Inaugurated",
       date: "May 14, 2025",
-      image: "https://source.unsplash.com/random/300x200?students,2"
+      image: "/lovable-uploads/a64e202d-8654-4eb7-9a72-956203b85f88.png"
     },
     {
       id: 3,
-      title: "New Research Center Inaugurated by Education Minister",
+      title: "Students Excel in Academic Competitions",
       date: "May 10, 2025",
-      image: "https://source.unsplash.com/random/300x200?research,3"
+      image: "/lovable-uploads/fd7697be-4da9-4c9f-99c3-16a23c2dc964.png"
     }
   ];
 

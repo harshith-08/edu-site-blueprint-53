@@ -21,7 +21,7 @@ const LatestNews = ({ news }: LatestNewsProps) => {
     id: 100,
     title: "SVRMC Students Excel in National Robotics Competition",
     date: "May 20, 2025",
-    image: "/lovable-uploads/60af87cc-1db6-4454-a9d2-88641715b200.png",
+    image: "/lovable-uploads/0708f036-44a6-4d70-817d-74a8097f1e73.png",
     excerpt: "Our students showcased exceptional talent and innovation at the National Robotics Competition, winning top honors in multiple categories."
   };
 

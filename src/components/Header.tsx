@@ -47,7 +47,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src="/lovable-uploads/5c7ebe72-4ecd-4e54-8ce5-6bf0a6141878.png" 
+              src="/lovable-uploads/43b08f5f-94a1-4efc-a4bc-d959843cb7ea.png" 
               alt="SVRMC Logo" 
               className="h-12 w-12"
             />
@@ -76,7 +76,7 @@ const Header = () => {
                 Departments <ChevronDown className="ml-1 h-4 w-4" />
               </Link>
               {departmentDropdown && (
-                <div className="absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-1 z-10 animate-fade-in">
+                <div className="absolute left-0 mt-1 w-64 bg-white rounded-md shadow-lg py-1 z-10 animate-fade-in">
                   <Link 
                     to="/departments" 
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -130,6 +130,34 @@ const Header = () => {
                   >
                     Computer Science
                   </Link>
+                  <Link 
+                    to="/departments/mathematics" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    Mathematics
+                  </Link>
+                  <Link 
+                    to="/departments/botany" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    Botany
+                  </Link>
+                  <Link 
+                    to="/departments/zoology" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    Zoology
+                  </Link>
+                  <Link 
+                    to="/departments/aquaculture" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    Aquaculture Technology
+                  </Link>
                   <div className="border-t border-gray-100 my-1"></div>
                   <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase">Humanities</div>
                   <Link 
@@ -145,6 +173,20 @@ const Header = () => {
                     onClick={() => setDepartmentDropdown(false)}
                   >
                     Economics
+                  </Link>
+                  <Link 
+                    to="/departments/politicalscience" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    Political Science
+                  </Link>
+                  <Link 
+                    to="/departments/history" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    History
                   </Link>
                 </div>
               )}
@@ -215,6 +257,8 @@ const Header = () => {
               >
                 All Departments
               </Link>
+              
+              {/* Languages */}
               <div className="pl-8 py-1 text-xs font-semibold text-gray-500 uppercase">Languages</div>
               <Link 
                 to="/departments/telugu" 
@@ -237,6 +281,8 @@ const Header = () => {
               >
                 English
               </Link>
+              
+              {/* Science */}
               <div className="pl-8 py-1 text-xs font-semibold text-gray-500 uppercase">Science</div>
               <Link 
                 to="/departments/physics" 
@@ -259,6 +305,36 @@ const Header = () => {
               >
                 Computer Science
               </Link>
+              <Link 
+                to="/departments/mathematics" 
+                className={`pl-12 py-2 ${isActive("/departments/mathematics") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                Mathematics
+              </Link>
+              <Link 
+                to="/departments/botany" 
+                className={`pl-12 py-2 ${isActive("/departments/botany") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                Botany
+              </Link>
+              <Link 
+                to="/departments/zoology" 
+                className={`pl-12 py-2 ${isActive("/departments/zoology") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                Zoology
+              </Link>
+              <Link 
+                to="/departments/aquaculture" 
+                className={`pl-12 py-2 ${isActive("/departments/aquaculture") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                Aquaculture Technology
+              </Link>
+              
+              {/* Humanities */}
               <div className="pl-8 py-1 text-xs font-semibold text-gray-500 uppercase">Humanities</div>
               <Link 
                 to="/departments/commerce" 
@@ -274,6 +350,21 @@ const Header = () => {
               >
                 Economics
               </Link>
+              <Link 
+                to="/departments/politicalscience" 
+                className={`pl-12 py-2 ${isActive("/departments/politicalscience") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                Political Science
+              </Link>
+              <Link 
+                to="/departments/history" 
+                className={`pl-12 py-2 ${isActive("/departments/history") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                History
+              </Link>
+              
               <Link 
                 to="/placements" 
                 className={`px-4 py-2 ${isActive("/placements") ? "bg-primary/10 text-primary font-medium" : "text-gray-700"}`}

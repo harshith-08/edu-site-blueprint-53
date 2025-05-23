@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -12,34 +13,34 @@ const Gallery = () => {
 
   const galleryItems = {
     campus: [
-      { id: 1, src: "/lovable-uploads/ad1edf50-6e71-4375-91d2-7e8d76b3b7b5.png", alt: "Main Campus Building" },
+      { id: 1, src: "/lovable-uploads/9ecf085a-3abc-45e7-844b-b132bfa85970.png", alt: "Main Campus Building" },
       { id: 2, src: "/lovable-uploads/b010e240-0ffe-43a4-884e-04e9e6094c36.png", alt: "College Entrance Gate" },
       { id: 3, src: "/lovable-uploads/c2330428-4591-4e58-92a3-ff6d9918a338.png", alt: "Lecture Hall Complex" },
-      { id: 4, src: "/lovable-uploads/aa64612b-a2c2-4fc2-b645-b756306336a0.png", alt: "Students Center" },
+      { id: 4, src: "/lovable-uploads/fd7697be-4da9-4c9f-99c3-16a23c2dc964.png", alt: "Students Center" },
       { id: 5, src: "/lovable-uploads/dd09abc5-6c94-4cbf-898d-c7df488183a6.png", alt: "Computer Laboratory" },
       { id: 6, src: "/lovable-uploads/2132c67c-81c1-4c7b-a949-3054c289f2ce.png", alt: "Sports Complex" }
     ],
     events: [
       { id: 1, src: "/lovable-uploads/061b3c84-914c-4bb5-893f-d12d6cff9d3f.png", alt: "NCC Cadets Formation" },
-      { id: 2, src: "/lovable-uploads/14236ae3-818e-41ef-a801-cd1e4e2eb10e.png", alt: "NCC Group Photo" },
+      { id: 2, src: "/lovable-uploads/a2d2ff22-61cc-47fe-8ef4-7086790f77d0.png", alt: "NCC Group Photo" },
       { id: 3, src: "/lovable-uploads/17bb2e0f-adc8-46fd-b6dc-aa370c366ef2.png", alt: "NCC Parade Review" },
       { id: 4, src: "/lovable-uploads/c845d941-c566-4910-8dbb-82f90fb04f82.png", alt: "NCC Drill Formation" },
       { id: 5, src: "/lovable-uploads/b1fc6422-ad59-4662-83db-90f4d62b1001.png", alt: "Academic Seminar" },
-      { id: 6, src: "/lovable-uploads/8ca0ef83-413e-4894-9e73-7361e0c0106c.png", alt: "Student Achievement Ceremony" }
+      { id: 6, src: "/lovable-uploads/85f3d76b-36b0-4119-9ae0-75167cea9d0b.png", alt: "Lecture Hall" }
     ],
     achievements: [
-      { id: 1, src: "/lovable-uploads/828ea20e-f759-4b97-aa60-3dc97555221f.png", alt: "Top Rank Achievement" },
-      { id: 2, src: "/lovable-uploads/4b78b0b7-424d-41e9-b09c-4108e1edd3c0.png", alt: "Research Center Excellence" },
-      { id: 3, src: "/lovable-uploads/4459cba5-4f2b-407d-9115-b78608126cab.png", alt: "Technology Innovation" },
-      { id: 4, src: "/lovable-uploads/26e5dd9a-23af-4d35-bf39-50ea0a90dcc1.png", alt: "Robotics Competition" },
-      { id: 5, src: "/lovable-uploads/ee497235-78d2-427a-9aca-40010a64e520.png", alt: "Student Well-being Program" },
-      { id: 6, src: "/lovable-uploads/d1d2add7-8d38-40a3-9b07-6b30cc16b6bc.png", alt: "Academic Excellence Awards" }
+      { id: 1, src: "/lovable-uploads/d85fb3d3-b73a-4321-ba55-69d5399a79a5.png", alt: "Top Rank Achievement" },
+      { id: 2, src: "/lovable-uploads/a64e202d-8654-4eb7-9a72-956203b85f88.png", alt: "Research Center Excellence" },
+      { id: 3, src: "/lovable-uploads/0708f036-44a6-4d70-817d-74a8097f1e73.png", alt: "Robotics Competition" },
+      { id: 4, src: "/lovable-uploads/d870c473-3320-4d6a-9dd4-15ab9ceab52a.png", alt: "NBA Accreditation" },
+      { id: 5, src: "/lovable-uploads/455edc55-96fe-44fc-a8d0-2b69c6dd6e92.png", alt: "NAAC A Grade" },
+      { id: 6, src: "/lovable-uploads/33bce374-c279-4e5c-afa1-9a764d7977c4.png", alt: "UGC Recognition" }
     ],
     sports: [
-      { id: 1, src: "https://source.unsplash.com/random/800x600?cricket,1", alt: "Cricket Match" },
-      { id: 2, src: "https://source.unsplash.com/random/800x600?basketball,2", alt: "Basketball Tournament" },
-      { id: 3, src: "https://source.unsplash.com/random/800x600?football,3", alt: "Football Match" },
-      { id: 4, src: "https://source.unsplash.com/random/800x600?athletics,4", alt: "Athletics Meet" }
+      { id: 1, src: "/lovable-uploads/662ebac1-9113-46ee-b212-a9a1526878d4.png", alt: "Cricket Equipment" },
+      { id: 2, src: "/lovable-uploads/3135e1f8-603d-4960-af26-bdc4f401f693.png", alt: "Basketball" },
+      { id: 3, src: "/lovable-uploads/5eef37d5-a7a2-416d-9fb3-7df167c87f7e.png", alt: "Annual Athletic Meet" },
+      { id: 4, src: "/lovable-uploads/8ca0ef83-413e-4894-9e73-7361e0c0106c.png", alt: "Sports Achievement" }
     ]
   };
 
@@ -50,7 +51,7 @@ const Gallery = () => {
         <div 
           className="absolute top-0 left-0 w-full h-64 bg-cover bg-center z-0" 
           style={{ 
-            backgroundImage: 'url("/lovable-uploads/4459cba5-4f2b-407d-9115-b78608126cab.png")', 
+            backgroundImage: 'url("/lovable-uploads/9ecf085a-3abc-45e7-844b-b132bfa85970.png")', 
             backgroundPosition: 'center 40%' 
           }}
         >
