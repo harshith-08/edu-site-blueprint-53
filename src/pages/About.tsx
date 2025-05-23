@@ -117,32 +117,32 @@ const About = () => {
           </div>
           
           <Tabs defaultValue="accreditation" className="max-w-4xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="accreditation">Accreditation</TabsTrigger>
-              <TabsTrigger value="rankings">Rankings</TabsTrigger>
-              <TabsTrigger value="awards">Awards</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-3 bg-white border border-gray-200">
+              <TabsTrigger value="accreditation" className="text-gray-700 data-[state=active]:bg-college-blue data-[state=active]:text-white">Accreditation</TabsTrigger>
+              <TabsTrigger value="rankings" className="text-gray-700 data-[state=active]:bg-college-blue data-[state=active]:text-white">Rankings</TabsTrigger>
+              <TabsTrigger value="awards" className="text-gray-700 data-[state=active]:bg-college-blue data-[state=active]:text-white">Awards</TabsTrigger>
             </TabsList>
             <TabsContent value="accreditation" className="mt-6">
               <div className="bg-white p-6 rounded-lg shadow-md space-y-6">
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
                   <img src="/lovable-uploads/f7ffbe1f-5fed-4b97-9af1-ab0ad2725f32.png" alt="NAAC A+ Grade" className="w-20 h-20 object-contain rounded" />
                   <div>
-                    <h4 className="font-bold text-lg">NAAC 'A+' Grade</h4>
-                    <p className="text-muted-foreground">Awarded for excellence in academic standards, research, and infrastructure</p>
+                    <h4 className="font-bold text-lg text-gray-800">NAAC 'A+' Grade</h4>
+                    <p className="text-gray-600">Awarded for excellence in academic standards, research, and infrastructure</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
                   <img src="/lovable-uploads/d23b165a-50de-4010-841f-59049ee5cf3d.png" alt="NBA Accreditation" className="w-20 h-20 object-contain rounded" />
                   <div>
-                    <h4 className="font-bold text-lg">NBA Accreditation</h4>
-                    <p className="text-muted-foreground">Multiple engineering programs accredited by the National Board of Accreditation</p>
+                    <h4 className="font-bold text-lg text-gray-800">NBA Accreditation</h4>
+                    <p className="text-gray-600">Multiple engineering programs accredited by the National Board of Accreditation</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
                   <img src="/lovable-uploads/fa6cd0f0-bbb2-4bf5-bc81-323b4085c47e.png" alt="UGC Recognition" className="w-20 h-20 object-contain rounded" />
                   <div>
-                    <h4 className="font-bold text-lg">UGC Recognition</h4>
-                    <p className="text-muted-foreground">Recognized under Section 2(f) and 12(B) of the UGC Act</p>
+                    <h4 className="font-bold text-lg text-gray-800">UGC Recognition</h4>
+                    <p className="text-gray-600">Recognized under Section 2(f) and 12(B) of the UGC Act</p>
                   </div>
                 </div>
               </div>
@@ -152,22 +152,22 @@ const About = () => {
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
                   <img src="https://source.unsplash.com/random/100x100?trophy,1" alt="NIRF" className="w-20 h-20 object-cover rounded" />
                   <div>
-                    <h4 className="font-bold text-lg">NIRF Ranking</h4>
-                    <p className="text-muted-foreground">Ranked among top 150 engineering colleges in India by NIRF</p>
+                    <h4 className="font-bold text-lg text-gray-800">NIRF Ranking</h4>
+                    <p className="text-gray-600">Ranked among top 150 engineering colleges in India by NIRF</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
                   <img src="https://source.unsplash.com/random/100x100?trophy,2" alt="THE" className="w-20 h-20 object-cover rounded" />
                   <div>
-                    <h4 className="font-bold text-lg">Times Higher Education Impact Rankings</h4>
-                    <p className="text-muted-foreground">Featured in the Impact Rankings for contributions to sustainable development goals</p>
+                    <h4 className="font-bold text-lg text-gray-800">Times Higher Education Impact Rankings</h4>
+                    <p className="text-gray-600">Featured in the Impact Rankings for contributions to sustainable development goals</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
                   <img src="https://source.unsplash.com/random/100x100?trophy,3" alt="Outlook" className="w-20 h-20 object-cover rounded" />
                   <div>
-                    <h4 className="font-bold text-lg">Outlook-ICARE Rankings</h4>
-                    <p className="text-muted-foreground">Top 50 engineering colleges in South India by Outlook-ICARE</p>
+                    <h4 className="font-bold text-lg text-gray-800">Outlook-ICARE Rankings</h4>
+                    <p className="text-gray-600">Top 50 engineering colleges in South India by Outlook-ICARE</p>
                   </div>
                 </div>
               </div>
@@ -177,22 +177,22 @@ const About = () => {
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
                   <img src="https://source.unsplash.com/random/100x100?award,1" alt="Clean Campus" className="w-20 h-20 object-cover rounded" />
                   <div>
-                    <h4 className="font-bold text-lg">Clean Campus Award</h4>
-                    <p className="text-muted-foreground">Recognized for maintaining eco-friendly and sustainable campus</p>
+                    <h4 className="font-bold text-lg text-gray-800">Clean Campus Award</h4>
+                    <p className="text-gray-600">Recognized for maintaining eco-friendly and sustainable campus</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
                   <img src="https://source.unsplash.com/random/100x100?award,2" alt="Innovation" className="w-20 h-20 object-cover rounded" />
                   <div>
-                    <h4 className="font-bold text-lg">Innovation Excellence Award</h4>
-                    <p className="text-muted-foreground">Awarded by CII for promoting research and innovation</p>
+                    <h4 className="font-bold text-lg text-gray-800">Innovation Excellence Award</h4>
+                    <p className="text-gray-600">Awarded by CII for promoting research and innovation</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
                   <img src="https://source.unsplash.com/random/100x100?award,3" alt="Sports" className="w-20 h-20 object-cover rounded" />
                   <div>
-                    <h4 className="font-bold text-lg">Best Sports Infrastructure Award</h4>
-                    <p className="text-muted-foreground">Recognized for excellent sports facilities and achievements</p>
+                    <h4 className="font-bold text-lg text-gray-800">Best Sports Infrastructure Award</h4>
+                    <p className="text-gray-600">Recognized for excellent sports facilities and achievements</p>
                   </div>
                 </div>
               </div>
