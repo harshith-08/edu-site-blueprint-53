@@ -43,6 +43,34 @@ const Departments = () => {
         programs: ["B.Sc", "M.Sc", "Ph.D"]
       },
       {
+        id: "chemistry",
+        name: "Chemistry",
+        image: "/lovable-uploads/4b78b0b7-424d-41e9-b09c-4108e1edd3c0.png",
+        description: "Study of chemical reactions, molecular structures, and laboratory techniques.",
+        programs: ["B.Sc", "M.Sc", "Ph.D"]
+      },
+      {
+        id: "mathematics",
+        name: "Mathematics",
+        image: "https://source.unsplash.com/random/400x300?mathematics,equations",
+        description: "Focuses on mathematical theories, computational techniques, and applications.",
+        programs: ["B.Sc", "M.Sc", "Ph.D"]
+      },
+      {
+        id: "computerscience",
+        name: "Computer Science",
+        image: "/lovable-uploads/dd09abc5-6c94-4cbf-898d-c7df488183a6.png",
+        description: "Programs covering programming, algorithms, data structures and advanced computing.",
+        programs: ["B.Sc", "M.Sc", "Ph.D"]
+      },
+      {
+        id: "botany",
+        name: "Botany",
+        image: "https://source.unsplash.com/random/400x300?plants,botany",
+        description: "Study of plant life, plant structure, growth, reproduction, and evolution.",
+        programs: ["B.Sc", "M.Sc", "Ph.D"]
+      },
+      {
         id: "zoology",
         name: "Zoology",
         image: "https://source.unsplash.com/random/400x300?biology,animals",
@@ -55,20 +83,6 @@ const Departments = () => {
         image: "https://source.unsplash.com/random/400x300?fish,aquarium",
         description: "Programs focusing on fish farming, aquatic organisms, and water resource management.",
         programs: ["B.Sc", "M.Sc"]
-      },
-      {
-        id: "computerscience",
-        name: "Computer Science",
-        image: "/lovable-uploads/365bcf12-2218-4dd4-a6e7-6d4bc591739a.png",
-        description: "Programs covering programming, algorithms, data structures and advanced computing.",
-        programs: ["B.Sc", "M.Sc", "Ph.D"]
-      },
-      {
-        id: "maths",
-        name: "Mathematics",
-        image: "https://source.unsplash.com/random/400x300?mathematics,equations",
-        description: "Focuses on mathematical theories, computational techniques, and applications.",
-        programs: ["B.Sc", "M.Sc", "Ph.D"]
       }
     ],
     humanities: [
@@ -108,12 +122,12 @@ const Departments = () => {
       {/* Hero Section with New Background */}
       <section className="relative pt-32 pb-20 bg-cover bg-center" 
         style={{ 
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/lovable-uploads/805efae8-1428-4b19-9a41-f2f62680aefc.png")' 
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/lovable-uploads/ad1edf50-6e71-4375-91d2-7e8d76b3b7b5.png")' 
         }}>
         <div className="container mx-auto px-4 text-white">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Departments</h1>
-            <p className="text-xl">Explore our diverse academic departments offering quality education across various disciplines.</p>
+            <p className="text-xl">Explore our diverse academic departments offering quality degree education across various disciplines.</p>
           </div>
         </div>
       </section>
@@ -189,7 +203,7 @@ const Departments = () => {
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="h-48 mb-4 overflow-hidden rounded-md">
                 <img 
-                  src="/lovable-uploads/084d247d-fba5-4d09-b18e-9685cdd1084d.png" 
+                  src="/lovable-uploads/4b78b0b7-424d-41e9-b09c-4108e1edd3c0.png" 
                   alt="Modern Laboratories" 
                   className="w-full h-full object-cover"
                 />
@@ -203,8 +217,8 @@ const Departments = () => {
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="h-48 mb-4 overflow-hidden rounded-md">
                 <img 
-                  src="/lovable-uploads/71dea894-961d-4fd6-ac1f-78e8db8d93b4.png" 
-                  alt="Departmental Libraries" 
+                  src="/lovable-uploads/c2330428-4591-4e58-92a3-ff6d9918a338.png" 
+                  alt="Lecture Halls" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -217,7 +231,7 @@ const Departments = () => {
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="h-48 mb-4 overflow-hidden rounded-md">
                 <img 
-                  src="/lovable-uploads/365bcf12-2218-4dd4-a6e7-6d4bc591739a.png" 
+                  src="/lovable-uploads/dd09abc5-6c94-4cbf-898d-c7df488183a6.png" 
                   alt="Computing Facilities" 
                   className="w-full h-full object-cover"
                 />
@@ -263,22 +277,22 @@ const Departments = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src="/lovable-uploads/8ca0ef83-413e-4894-9e73-7361e0c0106c.png" 
+                src="/lovable-uploads/aa64612b-a2c2-4fc2-b645-b756306336a0.png" 
                 alt="Classroom" 
                 className="rounded-lg shadow-md h-64 w-full object-cover"
               />
               <img 
-                src="/lovable-uploads/7e88e73b-ef9a-4c29-a6b7-de49570db1f5.png"
+                src="/lovable-uploads/4b78b0b7-424d-41e9-b09c-4108e1edd3c0.png"
                 alt="Research" 
                 className="rounded-lg shadow-md h-64 w-full object-cover mt-8"
               />
               <img 
-                src="/lovable-uploads/084d247d-fba5-4d09-b18e-9685cdd1084d.png" 
+                src="/lovable-uploads/dd09abc5-6c94-4cbf-898d-c7df488183a6.png" 
                 alt="Laboratory" 
                 className="rounded-lg shadow-md h-64 w-full object-cover mt-8"
               />
               <img 
-                src="/lovable-uploads/71dea894-961d-4fd6-ac1f-78e8db8d93b4.png" 
+                src="/lovable-uploads/c2330428-4591-4e58-92a3-ff6d9918a338.png" 
                 alt="Lecture Hall" 
                 className="rounded-lg shadow-md h-64 w-full object-cover"
               />
@@ -292,7 +306,7 @@ const Departments = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Interested in Our Programs?</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Explore our comprehensive range of programs and take the first step towards a successful career.
+            Explore our comprehensive range of degree programs and take the first step towards a successful career.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="bg-college-gold text-black hover:bg-yellow-500" asChild>

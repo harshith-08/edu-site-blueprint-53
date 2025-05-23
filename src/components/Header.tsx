@@ -42,7 +42,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md py-2" : "bg-black/50 backdrop-blur-sm py-4"}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
@@ -58,10 +58,10 @@ const Header = () => {
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-1">
-            <Link to="/" className={`nav-link ${isActive("/") ? "active" : ""} ${scrolled ? "text-college-dark" : "text-white"}`}>
+            <Link to="/" className={`nav-link ${isActive("/") ? "active" : ""} ${scrolled ? "text-college-dark hover:text-college-blue" : "text-white hover:text-college-gold"}`}>
               Home
             </Link>
-            <Link to="/about" className={`nav-link ${isActive("/about") ? "active" : ""} ${scrolled ? "text-college-dark" : "text-white"}`}>
+            <Link to="/about" className={`nav-link ${isActive("/about") ? "active" : ""} ${scrolled ? "text-college-dark hover:text-college-blue" : "text-white hover:text-college-gold"}`}>
               About
             </Link>
             <div 
@@ -71,68 +71,113 @@ const Header = () => {
             >
               <Link 
                 to="/departments" 
-                className={`nav-link flex items-center ${isActive("/departments") ? "active" : ""} ${scrolled ? "text-college-dark" : "text-white"}`}
+                className={`nav-link flex items-center ${isActive("/departments") ? "active" : ""} ${scrolled ? "text-college-dark hover:text-college-blue" : "text-white hover:text-college-gold"}`}
               >
                 Departments <ChevronDown className="ml-1 h-4 w-4" />
               </Link>
               {departmentDropdown && (
                 <div className="absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-1 z-10 animate-fade-in">
                   <Link 
-                    to="/departments/cse" 
+                    to="/departments" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    All Departments
+                  </Link>
+                  <div className="border-t border-gray-100 my-1"></div>
+                  <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase">Languages</div>
+                  <Link 
+                    to="/departments/telugu" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    Telugu
+                  </Link>
+                  <Link 
+                    to="/departments/hindi" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    Hindi
+                  </Link>
+                  <Link 
+                    to="/departments/english" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    English
+                  </Link>
+                  <div className="border-t border-gray-100 my-1"></div>
+                  <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase">Science</div>
+                  <Link 
+                    to="/departments/physics" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    Physics
+                  </Link>
+                  <Link 
+                    to="/departments/chemistry" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => setDepartmentDropdown(false)}
+                  >
+                    Chemistry
+                  </Link>
+                  <Link 
+                    to="/departments/computerscience" 
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     onClick={() => setDepartmentDropdown(false)}
                   >
                     Computer Science
                   </Link>
+                  <div className="border-t border-gray-100 my-1"></div>
+                  <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase">Humanities</div>
                   <Link 
-                    to="/departments/ece" 
+                    to="/departments/commerce" 
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     onClick={() => setDepartmentDropdown(false)}
                   >
-                    Electronics & Communication
+                    Commerce
                   </Link>
                   <Link 
-                    to="/departments/civil" 
+                    to="/departments/economics" 
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     onClick={() => setDepartmentDropdown(false)}
                   >
-                    Civil Engineering
-                  </Link>
-                  <Link 
-                    to="/departments/mech" 
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    onClick={() => setDepartmentDropdown(false)}
-                  >
-                    Mechanical Engineering
+                    Economics
                   </Link>
                 </div>
               )}
             </div>
-            <Link to="/placements" className={`nav-link ${isActive("/placements") ? "active" : ""} ${scrolled ? "text-college-dark" : "text-white"}`}>
+            <Link to="/placements" className={`nav-link ${isActive("/placements") ? "active" : ""} ${scrolled ? "text-college-dark hover:text-college-blue" : "text-white hover:text-college-gold"}`}>
               Placements
             </Link>
-            <Link to="/news" className={`nav-link ${isActive("/news") ? "active" : ""} ${scrolled ? "text-college-dark" : "text-white"}`}>
+            <Link to="/news" className={`nav-link ${isActive("/news") ? "active" : ""} ${scrolled ? "text-college-dark hover:text-college-blue" : "text-white hover:text-college-gold"}`}>
               News
             </Link>
-            <Link to="/gallery" className={`nav-link ${isActive("/gallery") ? "active" : ""} ${scrolled ? "text-college-dark" : "text-white"}`}>
+            <Link to="/gallery" className={`nav-link ${isActive("/gallery") ? "active" : ""} ${scrolled ? "text-college-dark hover:text-college-blue" : "text-white hover:text-college-gold"}`}>
               Gallery
             </Link>
-            <Link to="/contact" className={`nav-link ${isActive("/contact") ? "active" : ""} ${scrolled ? "text-college-dark" : "text-white"}`}>
+            <Link to="/contact" className={`nav-link ${isActive("/contact") ? "active" : ""} ${scrolled ? "text-college-dark hover:text-college-blue" : "text-white hover:text-college-gold"}`}>
               Contact
             </Link>
           </nav>
 
           <div className="hidden lg:flex items-center space-x-2">
-            <Button variant="outline" className={`border-primary ${scrolled ? "text-primary" : "text-white border-white hover:border-primary"}`} asChild>
+            <Button 
+              variant="outline" 
+              className={`${scrolled ? "border-college-blue text-college-blue hover:bg-college-blue hover:text-white" : "border-white text-white hover:bg-white hover:text-college-blue"}`} 
+              asChild
+            >
               <Link to="/admin-login">Admin Login</Link>
             </Button>
-            <Button className="bg-green-600 text-white hover:bg-green-700" asChild>
+            <Button className="bg-college-green text-white hover:bg-green-700" asChild>
               <Link to="/student-documents">Student Documents</Link>
             </Button>
           </div>
 
           <button 
-            className="lg:hidden text-college-blue"
+            className={`lg:hidden ${scrolled ? "text-college-blue" : "text-white"}`}
             onClick={toggleMobileMenu}
             aria-label="Toggle navigation menu"
           >
@@ -164,32 +209,70 @@ const Header = () => {
               </Link>
               <div className="px-4 py-2 text-gray-700 font-medium">Departments</div>
               <Link 
-                to="/departments/cse" 
-                className={`pl-8 py-2 ${isActive("/departments/cse") ? "bg-primary/10 text-primary font-medium" : "text-gray-700"}`}
+                to="/departments" 
+                className={`pl-8 py-2 ${isActive("/departments") ? "bg-primary/10 text-primary font-medium" : "text-gray-700"}`}
+                onClick={closeMobileMenu}
+              >
+                All Departments
+              </Link>
+              <div className="pl-8 py-1 text-xs font-semibold text-gray-500 uppercase">Languages</div>
+              <Link 
+                to="/departments/telugu" 
+                className={`pl-12 py-2 ${isActive("/departments/telugu") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                Telugu
+              </Link>
+              <Link 
+                to="/departments/hindi" 
+                className={`pl-12 py-2 ${isActive("/departments/hindi") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                Hindi
+              </Link>
+              <Link 
+                to="/departments/english" 
+                className={`pl-12 py-2 ${isActive("/departments/english") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                English
+              </Link>
+              <div className="pl-8 py-1 text-xs font-semibold text-gray-500 uppercase">Science</div>
+              <Link 
+                to="/departments/physics" 
+                className={`pl-12 py-2 ${isActive("/departments/physics") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                Physics
+              </Link>
+              <Link 
+                to="/departments/chemistry" 
+                className={`pl-12 py-2 ${isActive("/departments/chemistry") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
+                onClick={closeMobileMenu}
+              >
+                Chemistry
+              </Link>
+              <Link 
+                to="/departments/computerscience" 
+                className={`pl-12 py-2 ${isActive("/departments/computerscience") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
                 onClick={closeMobileMenu}
               >
                 Computer Science
               </Link>
+              <div className="pl-8 py-1 text-xs font-semibold text-gray-500 uppercase">Humanities</div>
               <Link 
-                to="/departments/ece" 
-                className={`pl-8 py-2 ${isActive("/departments/ece") ? "bg-primary/10 text-primary font-medium" : "text-gray-700"}`}
+                to="/departments/commerce" 
+                className={`pl-12 py-2 ${isActive("/departments/commerce") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
                 onClick={closeMobileMenu}
               >
-                Electronics & Communication
+                Commerce
               </Link>
               <Link 
-                to="/departments/civil" 
-                className={`pl-8 py-2 ${isActive("/departments/civil") ? "bg-primary/10 text-primary font-medium" : "text-gray-700"}`}
+                to="/departments/economics" 
+                className={`pl-12 py-2 ${isActive("/departments/economics") ? "bg-primary/10 text-primary font-medium" : "text-gray-600"}`}
                 onClick={closeMobileMenu}
               >
-                Civil Engineering
-              </Link>
-              <Link 
-                to="/departments/mech" 
-                className={`pl-8 py-2 ${isActive("/departments/mech") ? "bg-primary/10 text-primary font-medium" : "text-gray-700"}`}
-                onClick={closeMobileMenu}
-              >
-                Mechanical Engineering
+                Economics
               </Link>
               <Link 
                 to="/placements" 
@@ -223,7 +306,7 @@ const Header = () => {
                 <Button variant="outline" className="text-primary border-primary w-full" asChild>
                   <Link to="/admin-login" onClick={closeMobileMenu}>Admin Login</Link>
                 </Button>
-                <Button className="bg-green-600 text-white hover:bg-green-700 w-full" asChild>
+                <Button className="bg-college-green text-white hover:bg-green-700 w-full" asChild>
                   <Link to="/student-documents" onClick={closeMobileMenu}>Student Documents</Link>
                 </Button>
               </div>

@@ -13,26 +13,28 @@ const Gallery = () => {
 
   const galleryItems = {
     campus: [
-      { id: 1, src: "/lovable-uploads/805efae8-1428-4b19-9a41-f2f62680aefc.png", alt: "Campus Main Building" },
-      { id: 7, src: "/lovable-uploads/084d247d-fba5-4d09-b18e-9685cdd1084d.png", alt: "Chemistry Laboratory" },
-      { id: 5, src: "/lovable-uploads/71dea894-961d-4fd6-ac1f-78e8db8d93b4.png", alt: "Auditorium" },
-      { id: 6, src: "/lovable-uploads/365bcf12-2218-4dd4-a6e7-6d4bc591739a.png", alt: "Computer Lab" },
-      { id: 3, src: "https://source.unsplash.com/random/800x600?college,3", alt: "Sports Complex" },
-      { id: 6, src: "https://source.unsplash.com/random/800x600?building,6", alt: "Student Center" }
+      { id: 1, src: "/lovable-uploads/ad1edf50-6e71-4375-91d2-7e8d76b3b7b5.png", alt: "Main Campus Building" },
+      { id: 2, src: "/lovable-uploads/b010e240-0ffe-43a4-884e-04e9e6094c36.png", alt: "College Entrance Gate" },
+      { id: 3, src: "/lovable-uploads/c2330428-4591-4e58-92a3-ff6d9918a338.png", alt: "Lecture Hall Complex" },
+      { id: 4, src: "/lovable-uploads/aa64612b-a2c2-4fc2-b645-b756306336a0.png", alt: "Students Center" },
+      { id: 5, src: "/lovable-uploads/dd09abc5-6c94-4cbf-898d-c7df488183a6.png", alt: "Computer Laboratory" },
+      { id: 6, src: "/lovable-uploads/2132c67c-81c1-4c7b-a949-3054c289f2ce.png", alt: "Sports Complex" }
     ],
     events: [
-      { id: 1, src: "/lovable-uploads/9f96f106-897d-46e3-a4a1-4c4b8f8f9f0c.png", alt: "NCC Cadets Formation" },
+      { id: 1, src: "/lovable-uploads/061b3c84-914c-4bb5-893f-d12d6cff9d3f.png", alt: "NCC Cadets Formation" },
       { id: 2, src: "/lovable-uploads/14236ae3-818e-41ef-a801-cd1e4e2eb10e.png", alt: "NCC Group Photo" },
       { id: 3, src: "/lovable-uploads/17bb2e0f-adc8-46fd-b6dc-aa370c366ef2.png", alt: "NCC Parade Review" },
-      { id: 4, src: "https://source.unsplash.com/random/800x600?seminar,4", alt: "National Conference" },
-      { id: 5, src: "https://source.unsplash.com/random/800x600?workshop,5", alt: "Industry Workshop" },
-      { id: 6, src: "https://source.unsplash.com/random/800x600?graduation,6", alt: "Graduation Ceremony" }
+      { id: 4, src: "/lovable-uploads/c845d941-c566-4910-8dbb-82f90fb04f82.png", alt: "NCC Drill Formation" },
+      { id: 5, src: "/lovable-uploads/b1fc6422-ad59-4662-83db-90f4d62b1001.png", alt: "Academic Seminar" },
+      { id: 6, src: "/lovable-uploads/8ca0ef83-413e-4894-9e73-7361e0c0106c.png", alt: "Student Achievement Ceremony" }
     ],
     achievements: [
-      { id: 1, src: "/lovable-uploads/3f2ac2fe-5cc6-403c-b266-c0a4bfc92b9a.png", alt: "Robotics Research Center" },
-      { id: 2, src: "/lovable-uploads/8ca0ef83-413e-4894-9e73-7361e0c0106c.png", alt: "Student Achievement Ceremony" },
-      { id: 3, src: "/lovable-uploads/7e88e73b-ef9a-4c29-a6b7-de49570db1f5.png", alt: "Research Excellence" },
-      { id: 4, src: "/lovable-uploads/d1d2add7-8d38-40a3-9b07-6b30cc16b6bc.png", alt: "Academic Excellence Awards" }
+      { id: 1, src: "/lovable-uploads/828ea20e-f759-4b97-aa60-3dc97555221f.png", alt: "Top Rank Achievement" },
+      { id: 2, src: "/lovable-uploads/4b78b0b7-424d-41e9-b09c-4108e1edd3c0.png", alt: "Research Center Excellence" },
+      { id: 3, src: "/lovable-uploads/4459cba5-4f2b-407d-9115-b78608126cab.png", alt: "Technology Innovation" },
+      { id: 4, src: "/lovable-uploads/26e5dd9a-23af-4d35-bf39-50ea0a90dcc1.png", alt: "Robotics Competition" },
+      { id: 5, src: "/lovable-uploads/ee497235-78d2-427a-9aca-40010a64e520.png", alt: "Student Well-being Program" },
+      { id: 6, src: "/lovable-uploads/d1d2add7-8d38-40a3-9b07-6b30cc16b6bc.png", alt: "Academic Excellence Awards" }
     ],
     sports: [
       { id: 1, src: "https://source.unsplash.com/random/800x600?cricket,1", alt: "Cricket Match" },
@@ -49,7 +51,7 @@ const Gallery = () => {
         <div 
           className="absolute top-0 left-0 w-full h-64 bg-cover bg-center z-0" 
           style={{ 
-            backgroundImage: 'url("/lovable-uploads/805efae8-1428-4b19-9a41-f2f62680aefc.png")', 
+            backgroundImage: 'url("/lovable-uploads/4459cba5-4f2b-407d-9115-b78608126cab.png")', 
             backgroundPosition: 'center 40%' 
           }}
         >
