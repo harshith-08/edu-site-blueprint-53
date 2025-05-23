@@ -12,8 +12,8 @@ import Layout from "@/components/Layout";
 const StudentDocuments = () => {
   const { toast } = useToast();
   const [filters, setFilters] = useState({
-    semester: "",
-    department: ""
+    semester: "all",
+    department: "all"
   });
   
   const [searchQuery, setSearchQuery] = useState("");
@@ -70,8 +70,8 @@ const StudentDocuments = () => {
   };
 
   const filteredMarksheets = marksheets.filter((sheet) => {
-    const matchesSemester = !filters.semester || sheet.semester === filters.semester;
-    const matchesDepartment = !filters.department || sheet.department === filters.department;
+    const matchesSemester = filters.semester === "all" || sheet.semester === filters.semester;
+    const matchesDepartment = filters.department === "all" || sheet.department === filters.department;
     const matchesSearch = !searchQuery || 
       sheet.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       sheet.department.toLowerCase().includes(searchQuery.toLowerCase());
@@ -124,7 +124,7 @@ const StudentDocuments = () => {
                           <SelectValue placeholder="All Departments" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="">All Departments</SelectItem>
+                          <SelectItem value="all">All Departments</SelectItem>
                           <SelectItem value="Computer Science">Computer Science</SelectItem>
                           <SelectItem value="Electronics & Communication">Electronics & Communication</SelectItem>
                           <SelectItem value="Civil Engineering">Civil Engineering</SelectItem>
@@ -142,7 +142,7 @@ const StudentDocuments = () => {
                           <SelectValue placeholder="All Semesters" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="">All Semesters</SelectItem>
+                          <SelectItem value="all">All Semesters</SelectItem>
                           <SelectItem value="1st Semester">1st Semester</SelectItem>
                           <SelectItem value="2nd Semester">2nd Semester</SelectItem>
                           <SelectItem value="3rd Semester">3rd Semester</SelectItem>
