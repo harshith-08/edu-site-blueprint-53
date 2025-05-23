@@ -28,7 +28,7 @@ const About = () => {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="https://source.unsplash.com/random/800x600?college,campus" 
+                src="/lovable-uploads/5810381d-fa14-451a-aba2-1235784bf4f2.png" 
                 alt="SVRMC Campus" 
                 className="w-full h-[400px] object-cover"
               />
@@ -125,21 +125,21 @@ const About = () => {
             <TabsContent value="accreditation" className="mt-6">
               <div className="bg-white p-6 rounded-lg shadow-md space-y-6">
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
-                  <img src="https://source.unsplash.com/random/100x100?certificate,1" alt="NAAC" className="w-20 h-20 object-cover rounded" />
+                  <img src="/lovable-uploads/f7ffbe1f-5fed-4b97-9af1-ab0ad2725f32.png" alt="NAAC A+ Grade" className="w-20 h-20 object-contain rounded" />
                   <div>
                     <h4 className="font-bold text-lg">NAAC 'A+' Grade</h4>
                     <p className="text-muted-foreground">Awarded for excellence in academic standards, research, and infrastructure</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
-                  <img src="https://source.unsplash.com/random/100x100?certificate,2" alt="NBA" className="w-20 h-20 object-cover rounded" />
+                  <img src="/lovable-uploads/d23b165a-50de-4010-841f-59049ee5cf3d.png" alt="NBA Accreditation" className="w-20 h-20 object-contain rounded" />
                   <div>
                     <h4 className="font-bold text-lg">NBA Accreditation</h4>
                     <p className="text-muted-foreground">Multiple engineering programs accredited by the National Board of Accreditation</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 items-center p-4 border border-gray-200 rounded-lg">
-                  <img src="https://source.unsplash.com/random/100x100?certificate,3" alt="UGC" className="w-20 h-20 object-cover rounded" />
+                  <img src="/lovable-uploads/fa6cd0f0-bbb2-4bf5-bc81-323b4085c47e.png" alt="UGC Recognition" className="w-20 h-20 object-contain rounded" />
                   <div>
                     <h4 className="font-bold text-lg">UGC Recognition</h4>
                     <p className="text-muted-foreground">Recognized under Section 2(f) and 12(B) of the UGC Act</p>
