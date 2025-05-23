@@ -8,37 +8,30 @@ import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 
 const Departments = () => {
-  const [activeTab, setActiveTab] = useState("engineering");
+  const [activeTab, setActiveTab] = useState("languages");
 
   const departments = {
-    engineering: [
+    languages: [
       {
-        id: "cse",
-        name: "Computer Science & Engineering",
-        image: "https://source.unsplash.com/random/400x300?computer,code",
-        description: "Offers programs in software development, AI, machine learning, and more.",
-        programs: ["B.Tech", "M.Tech", "Ph.D"]
+        id: "telugu",
+        name: "Telugu",
+        image: "https://source.unsplash.com/random/400x300?books,language",
+        description: "Studies focused on Telugu literature, grammar, and cultural aspects.",
+        programs: ["B.A.", "M.A.", "Ph.D"]
       },
       {
-        id: "ece",
-        name: "Electronics & Communication Engineering",
-        image: "https://source.unsplash.com/random/400x300?electronics,circuit",
-        description: "Focuses on electronic systems, communication networks, and signal processing.",
-        programs: ["B.Tech", "M.Tech", "Ph.D"]
+        id: "hindi",
+        name: "Hindi",
+        image: "https://source.unsplash.com/random/400x300?india,language",
+        description: "Comprehensive programs covering Hindi literature, poetry, and linguistic studies.",
+        programs: ["B.A.", "M.A.", "Ph.D"]
       },
       {
-        id: "civil",
-        name: "Civil Engineering",
-        image: "https://source.unsplash.com/random/400x300?construction,building",
-        description: "Deals with design, construction, and maintenance of physical structures.",
-        programs: ["B.Tech", "M.Tech"]
-      },
-      {
-        id: "mech",
-        name: "Mechanical Engineering",
-        image: "https://source.unsplash.com/random/400x300?mechanical,machine",
-        description: "Covers mechanics, thermodynamics, robotics, and manufacturing processes.",
-        programs: ["B.Tech", "M.Tech", "Ph.D"]
+        id: "english",
+        name: "English",
+        image: "https://source.unsplash.com/random/400x300?literature,books",
+        description: "Programs focusing on English literature, communication skills, and linguistic analysis.",
+        programs: ["B.A.", "M.A.", "Ph.D"]
       }
     ],
     science: [
@@ -46,14 +39,28 @@ const Departments = () => {
         id: "physics",
         name: "Physics",
         image: "https://source.unsplash.com/random/400x300?physics,science",
-        description: "Study of matter, energy, and the interaction between them.",
+        description: "Study of matter, energy, and the fundamental forces of nature.",
         programs: ["B.Sc", "M.Sc", "Ph.D"]
       },
       {
-        id: "chemistry",
-        name: "Chemistry",
-        image: "https://source.unsplash.com/random/400x300?chemistry,lab",
-        description: "Explores the composition, structure, properties, and changes of matter.",
+        id: "zoology",
+        name: "Zoology",
+        image: "https://source.unsplash.com/random/400x300?biology,animals",
+        description: "Study of animals, their behavior, structure, physiology, and classification.",
+        programs: ["B.Sc", "M.Sc", "Ph.D"]
+      },
+      {
+        id: "aquaculture",
+        name: "Aquaculture Technology",
+        image: "https://source.unsplash.com/random/400x300?fish,aquarium",
+        description: "Programs focusing on fish farming, aquatic organisms, and water resource management.",
+        programs: ["B.Sc", "M.Sc"]
+      },
+      {
+        id: "computerscience",
+        name: "Computer Science",
+        image: "/lovable-uploads/365bcf12-2218-4dd4-a6e7-6d4bc591739a.png",
+        description: "Programs covering programming, algorithms, data structures and advanced computing.",
         programs: ["B.Sc", "M.Sc", "Ph.D"]
       },
       {
@@ -64,28 +71,45 @@ const Departments = () => {
         programs: ["B.Sc", "M.Sc", "Ph.D"]
       }
     ],
-    management: [
-      {
-        id: "mba",
-        name: "Business Administration",
-        image: "https://source.unsplash.com/random/400x300?business,management",
-        description: "Offers specializations in finance, marketing, HR, and operations management.",
-        programs: ["BBA", "MBA"]
-      },
+    humanities: [
       {
         id: "commerce",
         name: "Commerce",
-        image: "https://source.unsplash.com/random/400x300?commerce,accounting",
-        description: "Covers accounting, taxation, business law, and economics.",
-        programs: ["B.Com", "M.Com"]
+        image: "https://source.unsplash.com/random/400x300?business,commerce",
+        description: "Covers accounting, taxation, business law, and economics principles.",
+        programs: ["B.Com", "M.Com", "Ph.D"]
+      },
+      {
+        id: "economics",
+        name: "Economics",
+        image: "https://source.unsplash.com/random/400x300?economics,finance",
+        description: "Study of resource allocation, production, consumption and wealth distribution.",
+        programs: ["B.A.", "M.A.", "Ph.D"]
+      },
+      {
+        id: "history",
+        name: "History",
+        image: "https://source.unsplash.com/random/400x300?history,ancient",
+        description: "Examination of past events, civilizations, and cultural developments.",
+        programs: ["B.A.", "M.A.", "Ph.D"]
+      },
+      {
+        id: "polisci",
+        name: "Political Science",
+        image: "https://source.unsplash.com/random/400x300?politics,government",
+        description: "Study of governance systems, political behavior, and public policy.",
+        programs: ["B.A.", "M.A.", "Ph.D"]
       }
     ]
   };
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-cover bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://source.unsplash.com/random/1920x600?university,classroom")' }}>
+      {/* Hero Section with New Background */}
+      <section className="relative pt-32 pb-20 bg-cover bg-center" 
+        style={{ 
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/lovable-uploads/805efae8-1428-4b19-9a41-f2f62680aefc.png")' 
+        }}>
         <div className="container mx-auto px-4 text-white">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Departments</h1>
@@ -97,24 +121,24 @@ const Departments = () => {
       {/* Departments List */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <Tabs defaultValue="engineering" className="w-full" onValueChange={setActiveTab}>
+          <Tabs defaultValue="languages" className="w-full" onValueChange={setActiveTab}>
             <div className="flex justify-center mb-8">
               <TabsList className="grid grid-cols-3 w-full max-w-md">
-                <TabsTrigger value="engineering">Engineering</TabsTrigger>
-                <TabsTrigger value="science">Science</TabsTrigger>
-                <TabsTrigger value="management">Management</TabsTrigger>
+                <TabsTrigger value="languages" className="bg-college-blue text-white data-[state=active]:bg-college-gold data-[state=active]:text-black">Languages</TabsTrigger>
+                <TabsTrigger value="science" className="bg-college-blue text-white data-[state=active]:bg-college-gold data-[state=active]:text-black">Science</TabsTrigger>
+                <TabsTrigger value="humanities" className="bg-college-blue text-white data-[state=active]:bg-college-gold data-[state=active]:text-black">Humanities</TabsTrigger>
               </TabsList>
             </div>
             
-            <TabsContent value="engineering" className="space-y-6">
+            <TabsContent value="languages" className="space-y-6">
               <div className="text-center mb-6">
-                <h2 className="text-3xl font-bold text-college-blue">Engineering Departments</h2>
+                <h2 className="text-3xl font-bold text-college-blue">Languages Departments</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto mt-2">
-                  Our engineering departments offer cutting-edge programs with a focus on practical skills and industry readiness.
+                  Our language departments focus on developing strong communication skills and cultural understanding.
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {departments.engineering.map((dept) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {departments.languages.map((dept) => (
                   <DepartmentCard key={dept.id} department={dept} />
                 ))}
               </div>
@@ -134,15 +158,15 @@ const Departments = () => {
               </div>
             </TabsContent>
             
-            <TabsContent value="management" className="space-y-6">
+            <TabsContent value="humanities" className="space-y-6">
               <div className="text-center mb-6">
-                <h2 className="text-3xl font-bold text-college-blue">Management Departments</h2>
+                <h2 className="text-3xl font-bold text-college-blue">Humanities Departments</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto mt-2">
-                  Our management programs focus on developing entrepreneurial and leadership skills.
+                  Our humanities programs focus on developing critical thinking and analytical skills.
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {departments.management.map((dept) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {departments.humanities.map((dept) => (
                   <DepartmentCard key={dept.id} department={dept} />
                 ))}
               </div>
@@ -165,7 +189,7 @@ const Departments = () => {
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="h-48 mb-4 overflow-hidden rounded-md">
                 <img 
-                  src="https://source.unsplash.com/random/600x400?laboratory" 
+                  src="/lovable-uploads/084d247d-fba5-4d09-b18e-9685cdd1084d.png" 
                   alt="Modern Laboratories" 
                   className="w-full h-full object-cover"
                 />
@@ -179,21 +203,21 @@ const Departments = () => {
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="h-48 mb-4 overflow-hidden rounded-md">
                 <img 
-                  src="https://source.unsplash.com/random/600x400?library,books" 
+                  src="/lovable-uploads/71dea894-961d-4fd6-ac1f-78e8db8d93b4.png" 
                   alt="Departmental Libraries" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold text-college-blue mb-2">Departmental Libraries</h3>
+              <h3 className="text-xl font-bold text-college-blue mb-2">Lecture Halls</h3>
               <p className="text-gray-700">
-                Specialized libraries with an extensive collection of books, journals, and digital resources for in-depth study.
+                Modern lecture halls with audio-visual facilities for an enhanced learning experience.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="h-48 mb-4 overflow-hidden rounded-md">
                 <img 
-                  src="https://source.unsplash.com/random/600x400?computer,lab" 
+                  src="/lovable-uploads/365bcf12-2218-4dd4-a6e7-6d4bc591739a.png" 
                   alt="Computing Facilities" 
                   className="w-full h-full object-cover"
                 />
@@ -233,29 +257,29 @@ const Departments = () => {
                   <span>Industry collaborations for practical learning</span>
                 </li>
               </ul>
-              <Button className="bg-college-blue hover:bg-blue-700" asChild>
+              <Button className="bg-college-blue hover:bg-blue-700 text-white" asChild>
                 <Link to="/faculty-directory">Meet Our Faculty</Link>
               </Button>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src="https://source.unsplash.com/random/300x400?professor,1" 
-                alt="Faculty" 
+                src="/lovable-uploads/8ca0ef83-413e-4894-9e73-7361e0c0106c.png" 
+                alt="Classroom" 
                 className="rounded-lg shadow-md h-64 w-full object-cover"
               />
               <img 
-                src="https://source.unsplash.com/random/300x400?lecture,1" 
-                alt="Faculty" 
+                src="/lovable-uploads/7e88e73b-ef9a-4c29-a6b7-de49570db1f5.png"
+                alt="Research" 
                 className="rounded-lg shadow-md h-64 w-full object-cover mt-8"
               />
               <img 
-                src="https://source.unsplash.com/random/300x400?laboratory,research" 
-                alt="Faculty" 
+                src="/lovable-uploads/084d247d-fba5-4d09-b18e-9685cdd1084d.png" 
+                alt="Laboratory" 
                 className="rounded-lg shadow-md h-64 w-full object-cover mt-8"
               />
               <img 
-                src="https://source.unsplash.com/random/300x400?professor,2" 
-                alt="Faculty" 
+                src="/lovable-uploads/71dea894-961d-4fd6-ac1f-78e8db8d93b4.png" 
+                alt="Lecture Hall" 
                 className="rounded-lg shadow-md h-64 w-full object-cover"
               />
             </div>
@@ -271,7 +295,7 @@ const Departments = () => {
             Explore our comprehensive range of programs and take the first step towards a successful career.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="bg-white text-college-blue hover:bg-gray-100" asChild>
+            <Button size="lg" className="bg-college-gold text-black hover:bg-yellow-500" asChild>
               <Link to="/admission">Apply Now</Link>
             </Button>
             <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10" asChild>
