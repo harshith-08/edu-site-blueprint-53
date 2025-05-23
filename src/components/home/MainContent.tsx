@@ -28,10 +28,15 @@ const MainContent = ({ latestNews }: MainContentProps) => {
       <LatestNews news={latestNews} />
       <TestimonialsCarousel />
       
-      <div className="mt-12 text-center">
+      <div className="mt-12 text-center flex flex-col gap-4 sm:flex-row sm:justify-center">
         <Button variant="outline" className="hover:bg-college-blue hover:text-white" asChild>
           <Link to="/academics" className="flex items-center">
-            Explore More About Our College <ArrowRight className="ml-2 h-4 w-4" />
+            Explore Academics <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </Button>
+        <Button variant="outline" className="hover:bg-college-blue hover:text-white" asChild>
+          <Link to="/research" className="flex items-center">
+            Discover Research <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
       </div>

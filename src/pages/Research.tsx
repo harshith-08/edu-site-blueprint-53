@@ -1,7 +1,6 @@
-
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Microscope, Flask, Braces, BookOpen, Lightbulb, Award } from "lucide-react";
+import { ArrowRight, Microscope, TestTube, Braces, BookOpen, Lightbulb, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -18,7 +17,7 @@ const Research = () => {
       id: 2,
       title: "Biotechnology",
       description: "Molecular biology, genetic engineering, and pharmaceutical biotechnology research.",
-      icon: <Flask className="h-6 w-6 text-college-blue" />,
+      icon: <TestTube className="h-6 w-6 text-college-blue" />,
       projects: 8
     },
     {
